@@ -1,10 +1,14 @@
-# GFG
+# GFG POTD Java Solutions
 
-This repository contains my daily solutions for
-GeeksforGeeks Problem.
+This repository contains my daily solutions for the GeeksforGeeks Problem of the Day (POTD), implemented in Java.
 
-🔹 Language: Java  
-🔹 Focus: DSA, logic building, consistency  
-🔹 Goal: Crack product-based companies  
+## Purpose
+- Consistent DSA practice
+- Improve problem-solving skills
+- Prepare for technical interviews
 
-Each solution is well-structured and optimized.
+## Tech Stack
+- Language: Java
+- Platform: GeeksforGeeks
+
+Updated daily. Consistency over perfection.
