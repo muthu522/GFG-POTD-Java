@@ -1,8 +1,7 @@
-# GFG-POTD-Java
-# GFG Problem of the Day 🚀
+# GFG
 
 This repository contains my daily solutions for
-GeeksforGeeks Problem of the Day (POTD).
+GeeksforGeeks Problem.
 
 🔹 Language: Java  
 🔹 Focus: DSA, logic building, consistency  
