@@ -1,0 +1,19 @@
+class Solution {
+    public int countSubset(int[] arr, int k) {
+        if (k < 0) return 0;
+
+        int[] a = new int[k + 1];
+        a[0] = 1;
+
+        for (int num : arr) {
+
+            if (num < 0 || num > k) continue;
+
+            for (int j = k; j >= num; j--) {
+                a[j] += a[j - num];
+            }
+        }
+        return a[k];
+
+    }
+}
