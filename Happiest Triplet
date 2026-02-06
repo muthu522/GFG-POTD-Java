@@ -1,0 +1,33 @@
+class Solution {
+    int[] smallestDiff(int a[], int b[], int c[]) {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        Arrays.sort(c);
+        int bestdiff = Integer.MAX_VALUE;
+        int bestsum = Integer.MAX_VALUE;
+        int i=0,j=0,k=0;
+        int x=0,y=0,z=0;
+        while(i<a.length && j<b.length && k<c.length){
+            int p = a[i];
+            int q = b[j];
+            int r = c[k];
+            int max = Math.max(p,Math.max(q,r));
+            int min = Math.min(p,Math.min(q,r));
+            int diff = max-min;
+            int  sum = p+q+r;
+            if(diff<bestdiff || (diff==bestdiff && sum<bestsum)){
+                bestdiff = diff;
+                bestsum = sum;
+                 x = p;
+                 y = q;
+                 z = r;
+            }
+            if(min==p) i++;
+            else if(min==q) j++;
+            else k++;
+        }
+        int[] res = {x,y,z};
+        Arrays.sort(res);
+        return new int[]{res[2],res[1],res[0]};
+    }
+}
