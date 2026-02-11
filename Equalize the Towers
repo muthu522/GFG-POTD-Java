@@ -1,0 +1,39 @@
+class Solution {
+
+    public long find(int[] heights, int[] cost, int mid) {
+        long total = 0;
+        for (int i = 0; i < heights.length; i++) {
+            total += (long) Math.abs(heights[i] - mid) * cost[i];
+        }
+        return total;
+    }
+
+    public int minCost(int[] heights, int[] cost) {
+        int low = heights[0];
+        int high = heights[0];
+
+        for (int h : heights) {
+            low = Math.min(low, h);
+            high = Math.max(high, h);
+        }
+
+        long ans = Long.MAX_VALUE;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            long cost1 = find(heights, cost, mid);
+            long cost2 = find(heights, cost, mid + 1);
+
+            ans = Math.min(ans, cost1);
+
+            if (cost1 < cost2) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return (int) ans; 
+    }
+}
