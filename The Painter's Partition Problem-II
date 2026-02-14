@@ -1,0 +1,36 @@
+class Solution {
+    public int minTime(int[] arr, int k) {
+        int low = 0,high = 0;
+        for(int x:arr){
+            low = Math.max(low,x);
+            high+=x;
+        }
+        int ans = 0;
+        while(low<=high){
+            int mid = low+(high-low)/2;
+            if(paint(arr,k,mid)){
+                ans = mid;
+                high = mid-1;
+            }
+            else{
+                low = mid+1;
+            }
+        }
+        return ans;
+        
+    }
+    public boolean paint(int[] arr,int k, int max){
+        int painter = 1;
+        int c = 0;
+        for(int x:arr){
+            if(c+x<=max){
+                c+=x;
+            }
+            else{
+                painter++;
+                c = x;
+            }
+        }
+        return painter<=k;
+    }
+}
