@@ -1,0 +1,28 @@
+class Solution {
+    public static ArrayList<Integer> findClosestPair(int arr1[], int arr2[], int x) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        int minDif = Integer.MAX_VALUE;
+        int i = 0;
+        int j = arr2.length-1;
+        int[] res = new int[2];
+        while(i<arr1.length && j>=0){
+            int sum = arr1[i]+arr2[j];
+            int diff = Math.abs(sum-x);
+            if(diff<minDif){
+                minDif = diff;
+                res[0] = arr1[i];
+                res[1] = arr2[j];
+            }
+            if(sum<x){
+                i++;
+            }
+            else{
+                j--;
+            }
+        }
+        for(int k=0;k<res.length;k++){
+            ans.add(res[k]);
+        }
+        return ans;
+    }
+}
